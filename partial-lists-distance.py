@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from scipy.stats import kendalltau, spearmanr
 
 def get_val(s, L):
     """ 
@@ -40,9 +39,3 @@ def kendall_distance(list1, list2, p=0):
                 if (v11-v21)*(v12-v22) < 0:
                     dist += 1
     return dist / 2 # each pair is considered twice
-
-def spearman_correlation(list1, list2):
-    return spearmanr(list1, list2).correlation
-
-def kendall_correlation(list1, list2):
-    return kendalltau(list1, list2).correlation
